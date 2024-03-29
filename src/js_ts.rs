@@ -105,7 +105,7 @@ pub fn handle_result(
     cfg: &ExportConfig,
 ) -> Result<String, ExportError> {
     Ok(match &function.result {
-        DataType::Result(t) => {
+        Some(DataType::Result(t)) => {
             let (t, e) = t.as_ref();
 
             format!(
@@ -114,7 +114,7 @@ pub fn handle_result(
                 ts::datatype(&cfg.inner, e, type_map)?
             )
         }
-        t => ts::datatype(&cfg.inner, t, type_map)?,
+        t => ts::datatype(&cfg.inner, &t.clone().unwrap(), type_map)?,
     })
 }
 
@@ -125,7 +125,7 @@ pub fn command_body(cfg: &ExportConfig, function: &FunctionDataType, as_any: boo
 
     maybe_return_as_result_tuple(
         &tauri_invoke(&name, arg_usages(&arg_names(&function.args))),
-        &function.result,
+        &function.result.as_ref().unwrap(),
         as_any,
     )
 }

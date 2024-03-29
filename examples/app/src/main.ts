@@ -1,4 +1,4 @@
-import { appWindow } from "@tauri-apps/api/window";
+import { appWindow } from "@tauri-apps/api/webviewWindow";
 import { commands, events } from "./bindings";
 
 let greetInputEl: HTMLInputElement | null;

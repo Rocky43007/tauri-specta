@@ -46,7 +46,7 @@ export type MyStruct = { some_field: string }
 
          import { invoke as TAURI_INVOKE } from "@tauri-apps/api";
 import * as TAURI_API_EVENT from "@tauri-apps/api/event";
-import { type WebviewWindowHandle as __WebviewWindowHandle__ } from "@tauri-apps/api/window";
+import { type WebviewWindowHandle as __WebviewWindowHandle__ } from "@tauri-apps/api/webviewWindow";
 
 type __EventObj__<T> = {
   listen: (

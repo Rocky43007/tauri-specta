@@ -1,7 +1,7 @@
 import { invoke as TAURI_INVOKE } from "@tauri-apps/api";
 import * as TAURI_API_EVENT from "@tauri-apps/api/event";
 
-/** @typedef {typeof import("@tauri-apps/api/window").WebviewWindowHandle} __WebviewWindowHandle__ */
+/** @typedef {typeof import("@tauri-apps/api/webviewWindow").WebviewWindowHandle} __WebviewWindowHandle__ */
 
 /**
  * @template T
